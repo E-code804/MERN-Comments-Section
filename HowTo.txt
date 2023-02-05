@@ -1,0 +1,2 @@
+To run backend: cd into backend and type "node server.js"
+To run frontend: cd into frontend and type "npm start"

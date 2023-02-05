@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light-gray);
+  width: 100%;
+  height: 100vh;
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+:root {
+  --moderate-blue: hsl(238, 40%, 52%);
+  --soft-red: hsl(358, 79%, 66%);
+  --light-grayish-blue: hsl(239, 57%, 85%);
+  --pale-red: hsl(357, 100%, 86%);
+  --dark-blue: hsl(212, 24%, 26%);
+  --grayish-blue: hsl(211, 10%, 45%);
+  --light-gray: hsl(223, 19%, 93%);
+  --very-light-gray: hsl(228, 33%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+.App {
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+/* Comment Component Styling */
+.comment-replies {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment {
+  background-color: var(--white);
+  border-radius: 5px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: rgba(50, 50, 93, 0.01) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.reply-comment {
+  width: 80%;
+  background-color: var(--white);
+  border-radius: 5px;
+  padding: 25px;
+  margin-bottom: 20px;
+  align-self: flex-end;
+  box-shadow: rgba(50, 50, 93, 0.01) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.comment-details {
+  display: flex;
+}
+
+.comment-votes {
+  height: 80px;
+  text-align: center;
+  background-color: var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 25px;
+}
+
+.comment-votes h1 {
+  font-size: 1rem;
+  color: var(--moderate-blue);
+}
+
+.comment-votes img {
+  cursor: pointer;
+}
+
+.comment-words {
+  width: 100%;
+}
+
+.space-writer-reply {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.display-reply {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: var(--moderate-blue);
+}
+
+.display-delete {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: var(--soft-red);
+}
+
+/* Reply Component Styling */
+.reply {
+  display: flex;
+  align-items: center;
+}
+
+.reply h3 {
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+.comment-writer-data {
+  display: flex;
+  align-items: center;
+}
+
+.comment-writer-data h3 {
+  font-size: 1rem;
+  margin-right: 15px;
+}
+
+.comment-writer-data p,
+.comment-content {
+  color: var(--grayish-blue);
+}
+
+.replies {
+  margin-top: 20px;
+}
+
+.replying-to {
+  font-weight: 500;
+  color: var(--moderate-blue);
+}
+
+/* User Comment Styling */
+.user-comment {
+  background-color: #fff;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.user-comment textarea {
+  font-family: "Rubik", sans-serif;
+  border: 1px solid var(--light-gray);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.send-btn {
+  font-family: "Rubik", sans-serif;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 0.85rem;
+  background-color: var(--moderate-blue);
+  width: 90px;
+  height: 35px;
+  margin-left: 25px;
+  transform: translateY(-25px);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.send-btn:hover {
+  background-color: hsl(238, 37%, 40%);
+}
+
+/* Confirm Delete */
+.confirm-delete {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-container {
+  width: 300px;
+  height: 250px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 35px;
+}
+
+.delete-container h1 {
+  font-size: 1.5rem;
+}
+
+.delete-container p {
+  color: var(--grayish-blue);
+}
+
+.delete-container button {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  width: 100px;
+  height: 35px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.confirm-delete-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+#delete {
+  background-color: var(--soft-red);
+}
+
+#delete:hover {
+  background-color: hsl(358, 52%, 56%);
+}
+
+#cancel {
+  background-color: var(--grayish-blue);
+}
+
+#cancel:hover {
+  background-color: hsl(210, 10%, 35%);
+}
+
+/* Reply Box */
+#reply-box {
+  width: 80%;
+  align-self: flex-end;
+}
+
+#enter-user-btn {
+  background-color: chartreuse;
+  color: #000;
+}
